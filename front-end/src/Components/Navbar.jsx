@@ -1,14 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { AppBar, Box, Toolbar, Typography, Button, IconButton } from '@mui/material';
+// eslint-disable-next-line
+import { AppBar, Box, Toolbar, Typography, Button, IconButton, Tooltip, Avatar, Menu, MenuItem } from '@mui/material';
+// eslint-disable-next-line
 import MenuIcon from '@mui/icons-material/Menu';
 
 const NavBar = ({ organization }) => {
   // eslint-disable-next-line
   const [organizationSettings, setOrganizationSettings] = useState(organization.settings);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   useEffect(() => {
-
+    console.log("useEffect Ran in Navbar")
   });
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+    console.log("handle menu ran")
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+    console.log("handleClose ran")
+  };
 
   console.log(organization.name, organization.organizationId, organization.settings, organization.sites, organizationSettings)
 
@@ -23,19 +36,40 @@ const NavBar = ({ organization }) => {
               alt='CTZ.Logo'
               src='https://tower.clicktripz.io/clicktripz-logo.svg'
               />
+
             <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
               { organization.name }
             </Typography>
-            <IconButton
-              size='large'
-              edge='start'
-              color='inherit'
-              aria-label='menu'
-              sx={{ mr: 2 }}
-            >
 
+            <IconButton
+              size="large"
+              aria-label="menu"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={ handleMenu }
+              color="inherit"
+            >
               <MenuIcon />
-            </IconButton>          </Toolbar>
+            </IconButton>
+
+            <Menu
+              id="menu-appbar"
+              anchorEl={ anchorEl }
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={ Boolean(anchorEl) }
+              onClose={ handleClose }
+            >
+              <MenuItem onClick={ handleClose }>Settings</MenuItem>
+            </Menu>
+          </Toolbar>
         </AppBar>
       </Box>
     </div>
