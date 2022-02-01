@@ -15,8 +15,17 @@ const NavBar = ({ organization }) => {
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position='static' color='secondary'>
+        <AppBar position='static' color='default' title={ <img src='https://tower.clicktripz.io/clicktripz-logo.svg' alt='logo' /> }>
           <Toolbar>
+            <Box
+              component='img'
+              sx={{ height: 37 }}
+              alt='CTZ.Logo'
+              src='https://tower.clicktripz.io/clicktripz-logo.svg'
+              />
+            <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
+              { organization.name }
+            </Typography>
             <IconButton
               size='large'
               edge='start'
@@ -26,12 +35,7 @@ const NavBar = ({ organization }) => {
             >
 
               <MenuIcon />
-            </IconButton>
-            <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-              { organization.name }
-            </Typography>
-            <Button color='inherit'>Login</Button>
-          </Toolbar>
+            </IconButton>          </Toolbar>
         </AppBar>
       </Box>
     </div>
