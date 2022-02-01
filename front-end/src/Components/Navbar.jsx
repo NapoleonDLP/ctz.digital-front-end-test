@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { AppBar, Box, Toolbar, Typography, Button, IconButton, Tooltip, Avatar, Menu, MenuItem } from '@mui/material';
 // eslint-disable-next-line
 import MenuIcon from '@mui/icons-material/Menu';
+import './Navbar.css'
 
 const NavBar = ({ organization }) => {
   // eslint-disable-next-line
@@ -37,8 +38,15 @@ const NavBar = ({ organization }) => {
               src='https://tower.clicktripz.io/clicktripz-logo.svg'
               />
 
-            <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-              { organization.name }
+            <Typography variant='h5' component='div' sx={{ flexGrow: 1 }}>
+              <div className='organizationNameContainer'>
+                <div className='organizationName'>
+                  { organization.name }
+                </div>
+                <div className='organizationId'>
+                  { organization.organizationId }
+                </div>
+              </div>
             </Typography>
 
             <IconButton
