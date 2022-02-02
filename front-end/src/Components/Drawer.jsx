@@ -18,13 +18,12 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 // eslint-disable-next-line
 import SettingsIcon from '@mui/icons-material/Settings';
 import NavBar from './Navbar';
 import WebIcon from '@mui/icons-material/Web';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
+import Sites from './Sites';
 
 
 const drawerWidth = 240;
@@ -147,7 +146,7 @@ export default function MiniDrawer({ organization }) {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-            <p> THIS IS WHERE I WILL ADD DATA </p>
+          <Sites />
       </Box>
     </Box>
   );
