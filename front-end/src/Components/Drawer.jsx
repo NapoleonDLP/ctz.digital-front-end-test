@@ -23,6 +23,7 @@ import MailIcon from '@mui/icons-material/Mail';
 // eslint-disable-next-line
 import SettingsIcon from '@mui/icons-material/Settings';
 import NavBar from './Navbar';
+import WebIcon from '@mui/icons-material/Web';
 
 const drawerWidth = 240;
 
@@ -96,6 +97,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function MiniDrawer({ organization }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [view, setView] = React.useState(null);
 
   // eslint-disable-next-line
   const handleDrawerOpen = () => {
@@ -120,10 +122,10 @@ export default function MiniDrawer({ organization }) {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          {['Sites'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <WebIcon />
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
