@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { styled } from '@mui/material/styles';
 // eslint-disable-next-line
 import { AppBar, Box, Toolbar, Typography, Button, IconButton, Tooltip, Avatar, Menu, MenuItem } from '@mui/material';
 // eslint-disable-next-line
-import MenuIcon from '@mui/icons-material/Menu';
+import SettingsIcon from '@mui/icons-material/Settings';
+import MuiAppBar from '@mui/material/AppBar';
 import './Navbar.css'
 
 const NavBar = ({ organization }) => {
@@ -24,12 +26,31 @@ const NavBar = ({ organization }) => {
     console.log("handleClose ran")
   };
 
+  const drawerWidth = 240;
+  const AppBar = styled(MuiAppBar, {
+  shouldForwardProp: (prop) => prop !== 'open',
+})(({ theme, open }) => ({
+  zIndex: theme.zIndex.drawer + 1,
+  transition: theme.transitions.create(['width', 'margin'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  ...(open && {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  }),
+}));
+
   console.log(organization.name, organization.organizationId, organization.settings, organization.sites, organizationSettings)
 
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position='static' color='default' title={ <img src='https://tower.clicktripz.io/clicktripz-logo.svg' alt='logo' /> }>
+        <AppBar position='absolute' color='black' title={ <img src='https://tower.clicktripz.io/clicktripz-logo.svg' alt='logo' /> }>
           <Toolbar>
             <Box
               component='img'
@@ -38,7 +59,7 @@ const NavBar = ({ organization }) => {
               src='https://tower.clicktripz.io/clicktripz-logo.svg'
               />
 
-            <Typography variant='h5' component='div' sx={{ flexGrow: 1 }}>
+            <Typography variant='h5' component='div' color='white' sx={{ flexGrow: 1 }}>
               <div className='organizationNameContainer'>
                 <div className='organizationName'>
                   { organization.name }
@@ -57,7 +78,7 @@ const NavBar = ({ organization }) => {
               onClick={ handleMenu }
               color="inherit"
             >
-              <MenuIcon />
+              <SettingsIcon />
             </IconButton>
 
             <Menu
@@ -76,6 +97,7 @@ const NavBar = ({ organization }) => {
               onClose={ handleClose }
             >
               <MenuItem onClick={ handleClose }>Settings</MenuItem>
+              <MenuItem onClick={ handleClose }>Logout</MenuItem>
             </Menu>
           </Toolbar>
         </AppBar>
