@@ -24,6 +24,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NavBar from './Navbar';
 import WebIcon from '@mui/icons-material/Web';
+import UploadFileIcon from '@mui/icons-material/UploadFile';
+
 
 const drawerWidth = 240;
 
@@ -133,10 +135,10 @@ export default function MiniDrawer({ organization }) {
         </List>
         <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          {['Upload Document'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <UploadFileIcon />
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
