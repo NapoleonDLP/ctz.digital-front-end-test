@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Sites = () => {
+const Sites = ({ sites }) => {
+  //create site cards
   return (
-    <h1> THIS IS WHERE I WILL ADD DATA </h1>
+    <div>
+      { sites.map((site, key) => <h1 key={key}>{ site.name || site.displayName}</h1>) }
+    </div>
   )
 };
 
