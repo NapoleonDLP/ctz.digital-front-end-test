@@ -1,11 +1,20 @@
 import React from 'react';
-import Card from '@mui/material/Card';
+import { Card, CardHeader, Avatar } from '@mui/material';
 
 const SiteCard = ({ site }) => {
+  const siteName = site.name || site.displayName;
 
   return (
-    <Card>
-      <h1>{ site.name || site.displayName }</h1>
+    <Card sx={{ maxWidth: 345 }}>
+      <CardHeader
+        avatar={
+          <Avatar sx={{}} aria-label='site'>
+            { site.logo ? <img src={ site.logo } alt='logo'/> : siteName[0].toUpperCase() }
+          </Avatar>
+        }
+        title={ siteName }
+        color='primary'
+      />
     </Card>
   )
 };
