@@ -76,9 +76,9 @@ const NavBar = ({ organization }) => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={ handleMenu }
-              color="inherit"
+              className='settingsIcon'
             >
-              <SettingsIcon />
+              <SettingsIcon className='settingsIcon'/>
             </IconButton>
 
             <Menu
