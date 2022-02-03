@@ -5,6 +5,7 @@ import { AppBar, Box, Toolbar, Typography, Button, IconButton, Tooltip, Avatar, 
 // eslint-disable-next-line
 import SettingsIcon from '@mui/icons-material/Settings';
 import MuiAppBar from '@mui/material/AppBar';
+import { Link } from 'react-router-dom';
 import './Navbar.css'
 
 const NavBar = ({ organization }) => {
@@ -96,7 +97,9 @@ const NavBar = ({ organization }) => {
               open={ Boolean(anchorEl) }
               onClose={ handleClose }
             >
-              <MenuItem onClick={ handleClose }>Settings</MenuItem>
+              <Link to='/settings' style={{ textDecoration: 'none', color: 'inherit'}}>
+                <MenuItem onClick={ handleClose }>Settings</MenuItem>
+              </Link>
               <MenuItem onClick={ handleClose }>Logout</MenuItem>
             </Menu>
           </Toolbar>
