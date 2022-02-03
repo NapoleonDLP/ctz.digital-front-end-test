@@ -101,6 +101,16 @@ export default function MiniDrawer({ organization }) {
   const [open, setOpen] = React.useState(false);
   const [view, setView] = React.useState(null);
 
+  //TODO: find a solution that doesn't add jsx to state
+  const handleListItemClick = (event) => {
+    view ? setView(null) : setView((
+      <>
+        <DrawerHeader />
+        <Sites sites={ organization.sites }/>
+      </>
+    ));
+  };
+
   // eslint-disable-next-line
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -125,12 +135,12 @@ export default function MiniDrawer({ organization }) {
         <Divider />
         <List>
           {['Sites'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                <WebIcon />
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+            <ListItem onClick={ handleListItemClick } key={text}>
+                <ListItemIcon>
+                  <WebIcon />
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
           ))}
         </List>
         <Divider />
@@ -145,9 +155,8 @@ export default function MiniDrawer({ organization }) {
           ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-          <Sites />
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }} className='drawerBox'>
+        { view }
       </Box>
     </Box>
   );
