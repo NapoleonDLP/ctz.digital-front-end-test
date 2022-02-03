@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardHeader, Avatar } from '@mui/material';
+import { Card, CardHeader, Avatar, Typography } from '@mui/material';
+import './SiteCard.css';
 
 const SiteCard = ({ site, color, index}) => {
   const siteName = site.name || site.displayName;
@@ -7,16 +8,27 @@ const SiteCard = ({ site, color, index}) => {
   const randomColor = colors[Math.floor(Math.random()*3)]
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} raised='true'>
       <CardHeader
         avatar={
           <Avatar sx={{}} aria-label='site'>
             { site.logo ? <img src={ site.logo } alt='logo'/> : siteName[0].toUpperCase() }
           </Avatar>
         }
-        title={ siteName }
+        title={
+          <Typography variant='h6' color='black'>
+            { siteName }
+          </Typography>
+          }
         style={{backgroundColor: randomColor }}
-        subheader={ site.id }
+        subheader={
+          <Typography
+            color='darkgrey'
+            className='siteCardSubheader'
+          >
+            { site.domain }
+          </Typography>
+        }
       />
     </Card>
   )
