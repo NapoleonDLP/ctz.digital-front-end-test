@@ -1,6 +1,7 @@
 // eslint-disable-next-line
 import React, { useState } from 'react';
 import NavBar from './Navbar';
+import GeneralSettings from './GeneralSettings';
 
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
@@ -19,6 +20,11 @@ const Settings = ({ organization, position }) => {
   const icons = [ <SettingsIcon />, <InsightsIcon />, <InsertDriveFileIcon /> ];
   // eslint-disable-next-line
   const [view, setView] = useState('General');
+  const views = {
+    'General': <GeneralSettings />,
+    // 'Revenue': RevenueSettings,
+    // 'Document': DocumentSettings
+  };
 
   return (
     <div className='settingsContainer'>
@@ -58,6 +64,13 @@ const Settings = ({ organization, position }) => {
               </ListItem>
             </List>
           </nav>
+        </Box>
+      </div>
+      <div>
+        <Box>
+          {
+            views[view]
+          }
         </Box>
       </div>
     </div>
