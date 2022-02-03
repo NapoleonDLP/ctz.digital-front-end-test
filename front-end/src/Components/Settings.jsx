@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import NavBar from './Navbar';
 import GeneralSettings from './GeneralSettings';
+import RevenueSettings from './RevenueSettings';
+import DocumentSettings from './DocumentSettings';
 
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
@@ -22,8 +24,8 @@ const Settings = ({ organization, position }) => {
   const [view, setView] = useState('General');
   const views = {
     'General': <GeneralSettings />,
-    // 'Revenue': RevenueSettings,
-    // 'Document': DocumentSettings
+    'Revenue': <RevenueSettings />,
+    'Document': <DocumentSettings />
   };
 
   return (
