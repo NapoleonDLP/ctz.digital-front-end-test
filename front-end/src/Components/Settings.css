@@ -2,11 +2,12 @@
 
 }
 
-.settingsNavbar {
+/* .settingsNavbar {
   position: static;
   z-index: -1;
-}
+} */
 
 .settingsBox {
-
+  position: absolute;
+  /* margin: 1rem; */
 }
