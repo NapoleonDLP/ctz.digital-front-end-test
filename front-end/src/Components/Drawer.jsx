@@ -24,6 +24,7 @@ import NavBar from './Navbar';
 import WebIcon from '@mui/icons-material/Web';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import Sites from './Sites';
+import './Drawer.css';
 
 
 const drawerWidth = 240;
