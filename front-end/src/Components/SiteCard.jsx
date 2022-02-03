@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Card, CardHeader, CardActions, Collapse, CardContent, Avatar, Typography, IconButton } from '@mui/material';
+import { Card, CardHeader, CardActions, Collapse, CardContent, Avatar, Typography, IconButton, ToggleButton } from '@mui/material';
 import './SiteCard.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/material/styles';
+import ToggleOnIcon from '@mui/icons-material/ToggleOn';
+import ToggleOffIcon from '@mui/icons-material/ToggleOff';
 
 
 const ExpandMore = styled((props) => {
@@ -21,6 +23,9 @@ const SiteCard = ({ site, color, index}) => {
   const colors = ['#1E9AAA', '#fdb000', '#06d6a0'];
   const randomColor = colors[Math.floor(Math.random()*3)]
   const [expanded, setExpanded] = useState(false);
+  const [selected, setSelected] = useState(false);
+
+
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -51,6 +56,17 @@ const SiteCard = ({ site, color, index}) => {
       />
 
       <CardActions>
+        <ToggleButton
+          value='check'
+          selected={ selected }
+          onChange={() => {
+            setSelected(!selected)
+          }}
+          sx={{ border: 0 }}
+        >
+          { selected ? <ToggleOnIcon color='success'/> : <ToggleOffIcon />}
+        </ToggleButton>
+
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
