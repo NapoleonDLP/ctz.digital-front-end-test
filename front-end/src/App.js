@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <ThemeProvider theme={ theme }>
         <Routes>
-          <Route path='/' element={<Navigate replace to='/home' /> }/>
+          <Route path='/' element={ <Navigate replace to='/home' /> }/>
           <Route path='/home' element={ <Layout organization={ data } /> } />
           <Route path='/settings' element={ <Settings organization={ data }/> } />
         </Routes>
