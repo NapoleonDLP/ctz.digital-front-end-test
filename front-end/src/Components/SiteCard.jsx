@@ -79,7 +79,11 @@ const SiteCard = ({ site, color, index}) => {
 
       <Collapse in={ expanded } timeout='auto' unmountOnExit>
         <CardContent>
-
+          {
+            site.activeProducts.map((product) => (
+              <h1>{ product.type }</h1>
+            ))
+          }
         </CardContent>
       </Collapse>
     </Card>
