@@ -1,4 +1,7 @@
 .siteCardSubheader {
-  font-size: small;
-  color: darkgray
+  color: darkgray;
+}
+
+.siteCardTitle {
+  color: white;
 }

@@ -16,14 +16,14 @@ const SiteCard = ({ site, color, index}) => {
           </Avatar>
         }
         title={
-          <Typography variant='h6' color='black'>
+          <Typography variant='h6' className='siteCardTitle'>
             { siteName }
           </Typography>
           }
         style={{backgroundColor: randomColor }}
         subheader={
           <Typography
-            color='darkgrey'
+            sx={{fontSize: 10}}
             className='siteCardSubheader'
           >
             { site.domain }
