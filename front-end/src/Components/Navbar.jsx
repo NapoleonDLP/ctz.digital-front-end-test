@@ -8,7 +8,7 @@ import MuiAppBar from '@mui/material/AppBar';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 
-const NavBar = ({ organization }) => {
+const NavBar = ({ organization, position }) => {
   // eslint-disable-next-line
   const [organizationSettings, setOrganizationSettings] = useState(organization.settings);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -51,14 +51,16 @@ const NavBar = ({ organization }) => {
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position='absolute' color='black' title={ <img src='https://tower.clicktripz.io/clicktripz-logo.svg' alt='logo' /> }>
+        <AppBar position={ position } color='black' title={ <img src='https://tower.clicktripz.io/clicktripz-logo.svg' alt='logo' /> }>
           <Toolbar>
-            <Box
-              component='img'
-              sx={{ height: 37 }}
-              alt='CTZ.Logo'
-              src='https://tower.clicktripz.io/clicktripz-logo.svg'
-              />
+            <Link to='/home'>
+              <Box
+                component='img'
+                sx={{ height: 37 }}
+                alt='CTZ.Logo'
+                src='https://tower.clicktripz.io/clicktripz-logo.svg'
+                />
+            </Link>
 
             <Typography variant='h5' component='div' color='white' sx={{ flexGrow: 1 }}>
               <div className='organizationNameContainer'>
