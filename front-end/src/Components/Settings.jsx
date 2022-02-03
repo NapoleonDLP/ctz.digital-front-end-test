@@ -1,4 +1,5 @@
-import React from 'react';
+// eslint-disable-next-line
+import React, { useState } from 'react';
 import NavBar from './Navbar';
 
 import Box from '@mui/material/Box';
@@ -16,6 +17,8 @@ import './Settings.css';
 
 const Settings = ({ organization, position }) => {
   const icons = [ <SettingsIcon />, <InsightsIcon />, <InsertDriveFileIcon /> ];
+  // eslint-disable-next-line
+  const [view, setView] = useState('General');
 
   return (
     <div className='settingsContainer'>
@@ -24,38 +27,38 @@ const Settings = ({ organization, position }) => {
       </div>
       <div>
         <Box sx={{ width: '100%', maxWidth: 200, bgcolor: 'background.paper' }}>
-      <nav aria-label="main mailbox folders">
-        <List>
-          {
-            ['General', 'Revenue', 'Document'].map((setting, index) => (
+          <nav aria-label="main mailbox folders">
+            <List>
+              {
+                ['General', 'Revenue', 'Document'].map((setting, index) => (
+                    <ListItemButton onClick={ () => setView(setting) }>
+                  <ListItem disablePadding>
+                      <ListItemIcon>
+                        { icons[ index ]}
+                      </ListItemIcon>
+                      <ListItemText primary={ setting } />
+                  </ListItem>
+                    </ListItemButton>
+                ))
+              }
+            </List>
+          </nav>
+          <Divider />
+          <nav aria-label="secondary mailbox folders">
+            <List>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <ListItemIcon>
-                    { icons[ index ]}
-                  </ListItemIcon>
-                  <ListItemText primary={ setting } />
+                  <ListItemText primary="Trash" />
                 </ListItemButton>
               </ListItem>
-            ))
-          }
-        </List>
-      </nav>
-      <Divider />
-      <nav aria-label="secondary mailbox folders">
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Trash" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-              <ListItemText primary="Spam" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
-    </Box>
+              <ListItem disablePadding>
+                <ListItemButton component="a" href="#simple-list">
+                  <ListItemText primary="Spam" />
+                </ListItemButton>
+              </ListItem>
+            </List>
+          </nav>
+        </Box>
       </div>
     </div>
   )
