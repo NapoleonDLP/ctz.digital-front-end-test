@@ -13,7 +13,7 @@ function App() {
       <ThemeProvider theme={ theme }>
         <Routes>
           <Route path='/home' element={ <Layout organization={ data } /> } />
-          <Route path='/settings' element={ <Settings /> } />
+          <Route path='/settings' element={ <Settings organization={ data }/> } />
         </Routes>
       </ThemeProvider>
     </div>
