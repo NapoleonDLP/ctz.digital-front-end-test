@@ -3,9 +3,6 @@ import { Card, CardHeader, CardActions, Collapse, CardContent, Avatar, Typograph
 import './SiteCard.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/material/styles';
-import ToggleOnIcon from '@mui/icons-material/ToggleOn';
-import ToggleOffIcon from '@mui/icons-material/ToggleOff';
-
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
