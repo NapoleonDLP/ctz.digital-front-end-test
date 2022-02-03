@@ -8,7 +8,7 @@ const SiteCard = ({ site, color, index}) => {
   const randomColor = colors[Math.floor(Math.random()*3)]
 
   return (
-    <Card sx={{ maxWidth: 345 }} raised='true'>
+    <Card sx={{ maxWidth: 345, borderRadius: 3 }} raised={ true }>
       <CardHeader
         avatar={
           <Avatar sx={{}} aria-label='site'>
