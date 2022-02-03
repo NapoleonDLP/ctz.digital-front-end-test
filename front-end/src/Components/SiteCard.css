@@ -5,3 +5,13 @@
 .siteCardTitle {
   color: white;
 }
+
+.enabled {
+  color: #31ee5d;
+  text-transform: capitalize;
+}
+
+.notEnabled {
+  text-transform: capitalize;
+  color:rgb(218, 221, 224)
+}

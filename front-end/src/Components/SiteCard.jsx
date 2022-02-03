@@ -23,7 +23,7 @@ const SiteCard = ({ site, color, index}) => {
   const colors = ['#1E9AAA', '#fdb000', '#06d6a0'];
   const randomColor = colors[Math.floor(Math.random()*3)]
   const [expanded, setExpanded] = useState(false);
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(site.enabled);
 
 
 
@@ -64,7 +64,9 @@ const SiteCard = ({ site, color, index}) => {
           }}
           sx={{ border: 0 }}
         >
-          { selected ? <ToggleOnIcon color='success'/> : <ToggleOffIcon />}
+          <Typography sx={{ fontSize: 12, fontWeight: 400 }} className={ (selected ? 'enabled' : 'notEnabled') }>
+            Enabled
+          </Typography>
         </ToggleButton>
 
         <ExpandMore
