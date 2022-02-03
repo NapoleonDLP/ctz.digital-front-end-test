@@ -1,10 +1,12 @@
 import React from 'react';
+import SiteCard from './SiteCard';
+import './Sites.css';
 
 const Sites = ({ sites }) => {
   //create site cards
   return (
-    <div>
-      { sites.map((site, key) => <h1 key={key}>{ site.name || site.displayName}</h1>) }
+    <div className='sitesContainer'>
+      { sites.map((site, key) => <SiteCard site={ site } key={ key } index={ key }/>)}
     </div>
   )
 };
