@@ -15,6 +15,7 @@ import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import './Settings.css';
 
 const Settings = ({ organization, position }) => {
+  const icons = [ <SettingsIcon />, <InsightsIcon />, <InsertDriveFileIcon /> ];
 
   return (
     <div className='settingsContainer'>
@@ -25,30 +26,18 @@ const Settings = ({ organization, position }) => {
         <Box sx={{ width: '100%', maxWidth: 200, bgcolor: 'background.paper' }}>
       <nav aria-label="main mailbox folders">
         <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <SettingsIcon />
-              </ListItemIcon>
-              <ListItemText primary="General" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <InsightsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Revenue" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <InsertDriveFileIcon />
-              </ListItemIcon>
-              <ListItemText primary="Document" />
-            </ListItemButton>
-          </ListItem>
+          {
+            ['General', 'Revenue', 'Document'].map((setting, index) => (
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    { icons[ index ]}
+                  </ListItemIcon>
+                  <ListItemText primary={ setting } />
+                </ListItemButton>
+              </ListItem>
+            ))
+          }
         </List>
       </nav>
       <Divider />
