@@ -55,7 +55,7 @@ const SiteCard = ({ site, color, index}) => {
         }
       />
 
-      <CardActions>
+      <CardActions sx={{ justifyContent: 'space-between' }}>
         <ToggleButton
           value='check'
           selected={ selected }
