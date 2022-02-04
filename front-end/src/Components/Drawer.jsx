@@ -124,7 +124,7 @@ export default function MiniDrawer({ organization }) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
 
-      <NavBar organization={ organization } />
+      <NavBar position='absolute' organization={ organization } />
 
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
