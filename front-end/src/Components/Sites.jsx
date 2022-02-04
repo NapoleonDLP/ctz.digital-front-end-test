@@ -5,8 +5,11 @@ import './Sites.css';
 const Sites = ({ sites }) => {
   //create site cards
   return (
-    <div className='sitesContainer'>
-      { sites.map((site, key) => <SiteCard site={ site } key={ key } index={ key }/>)}
+    <div>
+      <h2 className='sitesTitle'>Sites</h2>
+      <div className='sitesContainer'>
+        { sites.map((site, key) => <SiteCard site={ site } key={ key } index={ key }/>)}
+      </div>
     </div>
   )
 };
