@@ -1,0 +1,12 @@
+.generalList {
+  background-color: rgb(228, 230, 231);
+  border-radius: 15px;
+}
+
+.generalListHeader {
+  background-color: #1E9AAA;
+  margin-top: -2rem;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: center;
+}
