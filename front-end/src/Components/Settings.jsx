@@ -23,9 +23,9 @@ const Settings = ({ organization, position }) => {
   // eslint-disable-next-line
   const [view, setView] = useState('General');
   const views = {
-    'General': <GeneralSettings />,
-    'Revenue': <RevenueSettings />,
-    'Document': <DocumentSettings />
+    'General': <GeneralSettings settings={ organization.settings }/>,
+    'Revenue': <RevenueSettings settings={ organization.settings }/>,
+    'Document': <DocumentSettings settings={ organization.settings }/>
   };
 
   return (
@@ -40,14 +40,14 @@ const Settings = ({ organization, position }) => {
               <List>
                 {
                   ['General', 'Revenue', 'Document'].map((setting, index) => (
-                      <ListItemButton onClick={ () => setView(setting) }>
-                    <ListItem disablePadding>
+                    <ListItemButton onClick={ () => setView(setting) } key={ index }>
+                      <ListItem disablePadding>
                         <ListItemIcon>
                           { icons[ index ]}
                         </ListItemIcon>
                         <ListItemText primary={ setting } />
-                    </ListItem>
-                      </ListItemButton>
+                      </ListItem>
+                    </ListItemButton>
                   ))
                 }
               </List>
@@ -71,9 +71,11 @@ const Settings = ({ organization, position }) => {
         </div>
         <div>
           <Box>
-            {
-              views[view]
-            }
+            <div className='cardContainer'>
+              {
+                views[view]
+              }
+            </div>
           </Box>
         </div>
       </div>
