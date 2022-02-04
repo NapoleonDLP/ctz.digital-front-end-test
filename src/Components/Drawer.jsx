@@ -71,7 +71,11 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function MiniDrawer({ organization }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [view, setView] = React.useState(null);
+  const [view, setView] = React.useState(<>
+        <DrawerHeader />
+        <Sites sites={ organization.sites }/>
+      </>
+      );
 
   //TODO: find a solution that doesn't add jsx to state
   const handleListItemClick = (event) => {
