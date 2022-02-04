@@ -1,15 +1,17 @@
 .settingsContainer {
   display: flex;
   justify-content: flex-start;
-  column-gap: 15rem;
+  column-gap: 10rem;
 }
 
-/* .settingsNavbar {
-  position: static;
-  z-index: -1;
-} */
+.cardContainer {
+  justify-content: center;
+  margin-top: 10rem;
+}
 
 .settingsBox {
   position: absolute;
   /* margin: 1rem; */
+  flex-shrink: inherit;
+  background-color: rgb(228, 230, 231);
 }
