@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { styled } from '@mui/material/styles';
 // eslint-disable-next-line
 import { AppBar, Box, Toolbar, Typography, IconButton, Tooltip, Avatar, Menu, MenuItem } from '@mui/material';
