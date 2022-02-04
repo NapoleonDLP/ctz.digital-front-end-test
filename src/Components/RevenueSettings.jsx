@@ -24,11 +24,10 @@ const RevenueSettings = ({ revenue }) => {
 
   const valueText = (value) => `${value}%`;
 
-  console.log(publisherShare)
   return (
     <Box sx={{ width: 250 }}>
       <Typography id="track-false-slider" gutterBottom>
-        Publisher Share
+        Publisher Share: { publisherShare + '%'}
       </Typography>
       <Slider
         onChange={ handleChange }
@@ -36,7 +35,6 @@ const RevenueSettings = ({ revenue }) => {
         getAriaValueText={ valueText }
         defaultValue={ publisherShare*10 }
         marks={ marks }
-        valueLabelDisplay={ publisherShare*10 }
         min={ 1 }
         max={ 9 }
         color='secondary'
