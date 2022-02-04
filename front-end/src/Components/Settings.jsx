@@ -24,7 +24,7 @@ const Settings = ({ organization, position }) => {
   const [view, setView] = useState('General');
   const views = {
     'General': <GeneralSettings settings={ organization.settings }/>,
-    'Revenue': <RevenueSettings settings={ organization.settings }/>,
+    'Revenue': <RevenueSettings revenue={ organization.settings.revenue }/>,
     'Document': <DocumentSettings settings={ organization.settings }/>
   };
 
