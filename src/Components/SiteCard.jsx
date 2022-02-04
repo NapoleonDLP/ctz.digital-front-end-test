@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardActions, Collapse, CardContent, Avatar, Typography, IconButton, ToggleButton } from '@mui/material';
 import './SiteCard.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ProductList from './ProductList';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 import { styled } from '@mui/material/styles';
 
 const ExpandMore = styled((props) => {
@@ -75,14 +78,17 @@ const SiteCard = ({ site, color, index}) => {
           <ExpandMoreIcon />
         </ExpandMore>
       </CardActions>
-
       <Collapse in={ expanded } timeout='auto' unmountOnExit>
         <CardContent>
-          {
-            site.activeProducts.map((product, index) => (
-              <h1 key={index}>{ product.type }</h1>
-            ))
-          }
+          <List>
+            {
+              site.activeProducts.map((product, index) => (
+                <ListItem>
+                  <ProductList product={ product } />
+                </ListItem>
+              ))
+            }
+          </List>
         </CardContent>
       </Collapse>
     </Card>
