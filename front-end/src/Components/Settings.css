@@ -11,7 +11,6 @@
 
 .settingsBox {
   position: absolute;
-  /* margin: 1rem; */
   flex-shrink: inherit;
   background-color: rgb(228, 230, 231);
 }

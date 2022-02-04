@@ -3,7 +3,6 @@ import SiteCard from './SiteCard';
 import './Sites.css';
 
 const Sites = ({ sites }) => {
-  //create site cards
   return (
     <div>
       <h2 className='sitesTitle'>Sites</h2>

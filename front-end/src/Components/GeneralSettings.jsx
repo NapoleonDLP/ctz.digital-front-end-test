@@ -4,7 +4,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Switch from '@mui/material/Switch';
-// eslint-disable-next-line
 import './GeneralSettings.css';
 
 const GeneralSettings = ({ settings }) => {

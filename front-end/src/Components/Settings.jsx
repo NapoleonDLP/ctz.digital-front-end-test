@@ -1,4 +1,3 @@
-// eslint-disable-next-line
 import React, { useState } from 'react';
 import NavBar from './Navbar';
 import GeneralSettings from './GeneralSettings';
@@ -20,7 +19,6 @@ import './Settings.css';
 
 const Settings = ({ organization, position }) => {
   const icons = [ <SettingsIcon />, <InsightsIcon />, <InsertDriveFileIcon /> ];
-  // eslint-disable-next-line
   const [view, setView] = useState('General');
   const views = {
     'General': <GeneralSettings settings={ organization.settings }/>,

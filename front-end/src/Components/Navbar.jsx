@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { styled } from '@mui/material/styles';
 // eslint-disable-next-line
-import { AppBar, Box, Toolbar, Typography, Button, IconButton, Tooltip, Avatar, Menu, MenuItem } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography, IconButton, Tooltip, Avatar, Menu, MenuItem } from '@mui/material';
 // eslint-disable-next-line
 import SettingsIcon from '@mui/icons-material/Settings';
 import MuiAppBar from '@mui/material/AppBar';
@@ -19,7 +19,6 @@ const NavBar = ({ organization, position }) => {
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
-    console.log("handle menu ran")
   };
 
   const handleClose = () => {
