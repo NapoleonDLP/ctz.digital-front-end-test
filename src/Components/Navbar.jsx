@@ -13,10 +13,6 @@ const NavBar = ({ organization, position }) => {
   const [organizationSettings, setOrganizationSettings] = useState(organization.settings);
   const [anchorEl, setAnchorEl] = useState(null);
 
-  useEffect(() => {
-    console.log("useEffect Ran in Navbar")
-  });
-
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -44,8 +40,6 @@ const NavBar = ({ organization, position }) => {
     }),
   }),
 }));
-
-  console.log(organization.name, organization.organizationId, organization.settings, organization.sites, organizationSettings)
 
   return (
     <div>
