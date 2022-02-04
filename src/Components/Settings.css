@@ -1,7 +1,7 @@
 .settingsContainer {
   display: flex;
   justify-content: flex-start;
-  column-gap: 10rem;
+  column-gap: 27%;
 }
 
 .cardContainer {
