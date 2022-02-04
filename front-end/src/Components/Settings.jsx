@@ -29,51 +29,53 @@ const Settings = ({ organization, position }) => {
   };
 
   return (
-    <div className='settingsContainer'>
+    <div>
       <div>
         <NavBar position='static' organization={ organization } className='settingsNavbar'/>
       </div>
-      <div>
-        <Box sx={{ width: '100%', maxWidth: 200, bgcolor: 'background.paper' }}>
-          <nav aria-label="main mailbox folders">
-            <List>
-              {
-                ['General', 'Revenue', 'Document'].map((setting, index) => (
-                    <ListItemButton onClick={ () => setView(setting) }>
-                  <ListItem disablePadding>
-                      <ListItemIcon>
-                        { icons[ index ]}
-                      </ListItemIcon>
-                      <ListItemText primary={ setting } />
-                  </ListItem>
-                    </ListItemButton>
-                ))
-              }
-            </List>
-          </nav>
-          <Divider />
-          <nav aria-label="secondary mailbox folders">
-            <List>
-              <ListItem disablePadding>
-                <ListItemButton>
-                  <ListItemText primary="Trash" />
-                </ListItemButton>
-              </ListItem>
-              <ListItem disablePadding>
-                <ListItemButton component="a" href="#simple-list">
-                  <ListItemText primary="Spam" />
-                </ListItemButton>
-              </ListItem>
-            </List>
-          </nav>
-        </Box>
-      </div>
-      <div>
-        <Box>
-          {
-            views[view]
-          }
-        </Box>
+      <div className='settingsContainer'>
+        <div>
+          <Box sx={{ width: '100%', maxWidth: 200, bgcolor: 'background.paper' }}>
+            <nav aria-label="main mailbox folders">
+              <List>
+                {
+                  ['General', 'Revenue', 'Document'].map((setting, index) => (
+                      <ListItemButton onClick={ () => setView(setting) }>
+                    <ListItem disablePadding>
+                        <ListItemIcon>
+                          { icons[ index ]}
+                        </ListItemIcon>
+                        <ListItemText primary={ setting } />
+                    </ListItem>
+                      </ListItemButton>
+                  ))
+                }
+              </List>
+            </nav>
+            <Divider />
+            <nav aria-label="secondary mailbox folders">
+              <List>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemText primary="Trash" />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton component="a" href="#simple-list">
+                    <ListItemText primary="Spam" />
+                  </ListItemButton>
+                </ListItem>
+              </List>
+            </nav>
+          </Box>
+        </div>
+        <div>
+          <Box>
+            {
+              views[view]
+            }
+          </Box>
+        </div>
       </div>
     </div>
   )

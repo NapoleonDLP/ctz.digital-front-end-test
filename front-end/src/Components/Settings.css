@@ -1,5 +1,7 @@
 .settingsContainer {
-
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 15rem;
 }
 
 /* .settingsNavbar {
