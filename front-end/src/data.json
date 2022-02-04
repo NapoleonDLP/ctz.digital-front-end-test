@@ -98,6 +98,149 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": 91011,
+            "name": "testpublisher.com",
+            "domain": "https://testpublisher.com",
+            "enabled": false,
+            "logo":"https://cdn.pixabay.com/photo/2021/01/11/10/20/circuit-board-5907811_960_720.jpg",
+            "scriptDelay": 5000,
+            "activeProducts": [
+                {
+                    "type": "Leave-Behind",
+                    "devices": [
+                        {
+                            "type": "mobile",
+                            "enabled": false
+                        }
+                    ]
+                },
+                {
+                    "type": "Parallax",
+                    "devices": [
+                        {
+                            "type": "desktop",
+                            "enabled": true
+                        },
+                        {
+                            "type": "mobile",
+                            "enabled": true
+                        },
+                        {
+                            "type": "tablet",
+                            "enabled": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1213,
+            "name": "testpublisher.com",
+            "domain": "https://testpublisher.com",
+            "enabled": false,
+            "logo": "https://cdn.pixabay.com/photo/2014/08/26/21/35/the-fence-428562_960_720.jpg",
+            "scriptDelay": 5000,
+            "activeProducts": [
+                {
+                    "type": "Leave-Behind",
+                    "devices": [
+                        {
+                            "type": "mobile",
+                            "enabled": false
+                        }
+                    ]
+                },
+                {
+                    "type": "Parallax",
+                    "devices": [
+                        {
+                            "type": "desktop",
+                            "enabled": true
+                        },
+                        {
+                            "type": "mobile",
+                            "enabled": true
+                        },
+                        {
+                            "type": "tablet",
+                            "enabled": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1415,
+            "name": "testpublisher.com",
+            "domain": "https://testpublisher.com",
+            "enabled": true,
+            "scriptDelay": 5000,
+            "activeProducts": [
+                {
+                    "type": "Leave-Behind",
+                    "devices": [
+                        {
+                            "type": "mobile",
+                            "enabled": false
+                        }
+                    ]
+                },
+                {
+                    "type": "Parallax",
+                    "devices": [
+                        {
+                            "type": "desktop",
+                            "enabled": true
+                        },
+                        {
+                            "type": "mobile",
+                            "enabled": true
+                        },
+                        {
+                            "type": "tablet",
+                            "enabled": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1617,
+            "name": "testpublisher.com",
+            "domain": "https://testpublisher.com",
+            "enabled": false,
+            "logo": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6596f432192035.5672dd777c586.jpg",
+            "scriptDelay": 5000,
+            "activeProducts": [
+                {
+                    "type": "Leave-Behind",
+                    "devices": [
+                        {
+                            "type": "mobile",
+                            "enabled": false
+                        }
+                    ]
+                },
+                {
+                    "type": "Parallax",
+                    "devices": [
+                        {
+                            "type": "desktop",
+                            "enabled": true
+                        },
+                        {
+                            "type": "mobile",
+                            "enabled": true
+                        },
+                        {
+                            "type": "tablet",
+                            "enabled": true
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
